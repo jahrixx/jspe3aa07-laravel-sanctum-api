@@ -10,8 +10,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Post::with('user', 'comments')->get();
+        $posts = Post::with('user')->get();
     }
+
     public function store(Request $request)
     {
         $request->validate([
